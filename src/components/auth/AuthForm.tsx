@@ -23,11 +23,25 @@ export function AuthForm({ type }: AuthFormProps) {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
+
+    const currentForm = event.currentTarget;
+    if (!(currentForm instanceof HTMLFormElement)) {
+      console.error("AuthForm: event.currentTarget is not an HTMLFormElement. Value:", currentForm);
+      toast({
+        title: "Form Error",
+        description: "An unexpected error occurred with the form submission. Please try again.",
+        variant: "destructive",
+      });
+      setIsLoading(false);
+      return;
+    }
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    const formData = new FormData(event.currentTarget);
-    const email = formData.get('email');
+    const formData = new FormData(currentForm);
+    const emailValue = formData.get('email');
+    const email = typeof emailValue === 'string' ? emailValue : null;
 
     setIsLoading(false);
 
