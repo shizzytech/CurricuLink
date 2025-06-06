@@ -4,13 +4,13 @@ import type { LearningTrack } from '@/types';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Layers, User, DollarSignSign, ArrowRight } from 'lucide-react';
+import { Layers, User, DollarSign, ArrowRight } from 'lucide-react';
 
 interface LearningTrackCardProps {
   track: LearningTrack;
 }
 
-export function LearningTrackCard({ track }: LearningTrackProps) {
+export function LearningTrackCard({ track }: LearningTrackCardProps) {
   return (
     <Card className="flex flex-col h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
       <CardHeader className="p-0">
@@ -48,7 +48,7 @@ export function LearningTrackCard({ track }: LearningTrackProps) {
         )}
         {track.price && (
           <div className="flex items-center text-sm font-semibold">
-            <DollarSignSign className="h-4 w-4 mr-2 text-green-600" />
+            <DollarSign className="h-4 w-4 mr-2 text-green-600" />
             <span>${track.price.toFixed(2)}</span>
           </div>
         )}
