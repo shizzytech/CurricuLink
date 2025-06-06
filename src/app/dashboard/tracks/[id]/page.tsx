@@ -9,7 +9,7 @@ import { mockLearningTracks, mockModules } from '@/lib/mock-data';
 import type { LearningTrack, Module } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, Layers, User, DollarSign, Clock, Users, Target, CheckCircle, Edit3, Share2, CalendarDays } from 'lucide-react';
 import { Progress } from '@/components/ui/progress'; // If you want to show progress for the track
@@ -183,5 +183,3 @@ export default function TrackDetailPage() {
     </div>
   );
 }
-
-    
