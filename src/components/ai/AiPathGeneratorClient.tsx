@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from '@/components/ui/form';
 import { aiLearningPathSuggestions, type AiLearningPathSuggestionsOutput } from '@/ai/flows/ai-learning-path-suggestions';
 import { Loader2, Wand2, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
