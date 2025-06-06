@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import { Home, LayoutGrid, Layers, BrainCircuit, Settings, LogOut, UserCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { usePathname } from 'next/navigation'; // Import usePathname
 
 // TODO: Replace with actual user data and active path detection
 const SidebarLink = ({ href, icon: Icon, label, isActive }: { href: string; icon: React.ElementType; label: string; isActive?: boolean }) => (
@@ -19,8 +22,7 @@ const SidebarLink = ({ href, icon: Icon, label, isActive }: { href: string; icon
 );
 
 export function SidebarNav() {
-  // Placeholder for active path logic
-  const currentPath =  typeof window !== 'undefined' ? window.location.pathname : '';
+  const currentPath = usePathname(); // Use usePathname hook
 
   return (
     <aside className="w-64 border-r bg-background p-4 flex flex-col space-y-4">
